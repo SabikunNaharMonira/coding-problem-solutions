@@ -1,0 +1,311 @@
+//task 1
+public class BBAStudent extends Student{
+  public BBAStudent(){
+    super.setName("Default");
+    super.setDepartment("BBA");
+  }
+  public BBAStudent(String a){
+     super.setName(a);
+      super.setDepartment("BBA");
+  }
+}
+
+
+//task 2
+public class CheckingAccount extends Account{
+  public static int count ;
+  
+  public CheckingAccount(){
+    super(0.0);
+    count++;
+  }
+  public CheckingAccount(double n){
+    super(n);
+    count++;
+  }
+}
+
+
+//task3
+public class Dog extends Animal  {
+  public String breed;
+  public Dog(String name , int age , String color , String breed){
+    super(name , age , color);
+    this.breed= breed;
+  }
+  public String info(){
+    String s = super.info()+"Breed: "+breed;
+    return s;
+  }
+  public void makeSound(){
+        System.out.println(color+" color "+name+" is barking");
+    }
+}
+
+
+public class Cat extends Animal {
+  public String breed;
+  public Cat(String name , int age , String color , String breed){
+    super(name , age , color);
+    this.breed= breed;
+  }
+  public String info(){ 
+    String s = super.info()+"Breed: "+breed;
+    return s;
+  }
+  public void makeSound(){
+        System.out.println(color+" color "+name+" is meowing");
+    }
+}
+
+
+
+
+//task 4
+public class Vehicle2010 extends Vehicle {
+  
+  public void moveLowerLeft() {
+    moveDown();
+    moveLeft();
+  }
+
+  public void moveUpperRight() {
+    moveUp();
+    moveRight();
+  }
+
+  public void moveLowerRight() {
+    moveDown();
+    moveRight();
+  }
+}
+
+
+
+
+
+//task 5
+public class ComplexNumber extends RealNumber{
+  public double img = 1.0;
+    public ComplexNumber(){
+    super(1.0);
+  }
+  public ComplexNumber(double real, double img){
+    super(real);
+    this.img=img;
+  }
+  public String toString(){
+    return super.toString()+"\nImaginaryPart: "+img;
+  }
+}
+
+
+//task 6
+public class Developer extends Employee{
+  public String lang;
+  public double updt_salary;
+  public Developer(String name , double salary  , int work_hr , String lang){
+    super(name , salary , work_hr);
+    this.lang = lang;
+    updt_salary= salary;
+  }
+  public void calculateSalary(){
+    double salary = getBaseSalary();
+    int work= getHoursWorked();
+    if(lang.equals("Java")){
+      updt_salary= salary+ 700 ;
+    }
+    else{
+      updt_salary = salary;
+    }
+  }
+  public void displayInfo(){
+    super.displayInfo();
+    System.out.println("Language: "+lang+"\nFinal Salary: "+updt_salary);
+    
+  }
+}
+
+public class Manager extends Employee{
+  public double bonus;
+  public double updt_salary;
+  public Manager(String name , double salary  , int work_hr , double bonus){
+    super(name , salary , work_hr);
+    this.bonus = bonus;
+  }
+  public void calculateSalary(){
+    double salary = getBaseSalary();
+    int work= getHoursWorked();
+    if(work>40){
+      updt_salary= salary+(salary* (bonus/100));
+    }
+    else{
+      updt_salary = salary;
+    }
+  }
+  public void requestIncrement(int up){
+    int work= getHoursWorked();
+      double salary = getBaseSalary();
+    if(work>100){
+      setBaseSalary(up+salary);
+      System.out.println(up+" Increment approved.");
+    }
+    else if(work>80){
+      setBaseSalary(up/2+salary);
+      System.out.println(up/2+" Increment approved.");
+    }
+    else{
+      System.out.println("Increment denied.");
+    }
+  }
+  
+  public void displayInfo(){
+    super.displayInfo();
+    System.out.println("Bonus: "+bonus+" %"+"\nFinal Salary: "+updt_salary);
+    
+  }
+}
+
+
+//task 7
+public class CinemexTicket extends MovieTicket{
+  private static int ticket_count;
+  public String genre;
+  public boolean paid;
+  public String ticket_id;
+  public String status="Not paid";
+  
+  public CinemexTicket(String movie, String showtime, String genre, String date){
+    super(movie, date, showtime, 0.0);
+     this.genre = genre;
+     this.seat = "Regular";
+     paid = false;
+     ticket_count++;
+     ticketId();
+     
+  }
+  public CinemexTicket(String movie, String showtime, String genre, String date, String seat){
+    super(movie, date, showtime, 0.0);
+     this.genre = genre;
+     this.seat = "Regular";
+     paid = false;
+     ticket_count++;
+     this.seat=seat;
+     ticketId();
+  }
+  
+  public void ticketId(){
+    String[] chars = seat.split("");
+    String seat_type = chars[0];
+    this.ticket_id= getMovie()+"-"+seat_type+"-"+ticket_count;
+  }
+  
+  public void calculateTicketPrice() {
+    double price = 0.0;
+    for (int i = 0; i < seatTypes.length; i++) {
+      if (seat.equals(seatTypes[i])) {
+        price = seatPrices[i];
+        break;
+      }
+    }
+    String[] timeParts = showtime.split(":");
+    int hour = Integer.parseInt(timeParts[0]);
+    int minute = Integer.parseInt(timeParts[1]);
+     
+    if (hour >= 18 && hour <= 23) {
+            price += price * nightShowCharge / 100.0;
+        }
+
+        setPrice(price);
+        System.out.println("Ticket price is calculated successfully.");
+    }
+  public String confirmPayment() {
+    status = "Paid";
+        if (paid) {
+         
+            return "Ticket price is already paid!";
+        } else {
+          
+            paid = true;
+            return "Payment Successful.";
+        }
+    }
+  public static int getTotalTickets() {
+        return ticket_count;
+    }
+  
+  public String toString() {
+        return "Ticket ID: " + ticket_id +
+               "\n" + super.toString() +
+               "\nGenre: " + genre +
+               "\nSeat Type: " + seat +
+               "\nPrice(tk): " + getPrice() +
+               "\nStatus: " + status;
+    }
+}
+
+
+// task 8
+public class KKTea extends Tea {
+  public static int flav_sale = 0;
+  public int teabags;
+  public int weight;
+  public static int total_sale = 0;
+  public static int reg_sale = 0;
+  
+  public KKTea(int price, int teabags) {
+    super("KK Regular Tea", price);
+    this.teabags = teabags;
+    this.weight = teabags * 2;
+  }
+  
+  public static void updateSoldStatusRegular(KKTea tea) {
+    if (!tea.status) {
+      tea.status = true;
+      total_sale++;
+      reg_sale++;
+    }
+  }
+  
+  public static void totalSales() {
+    System.out.println("Total Sales: " + total_sale);
+    System.out.println("KK Regular Tea: " + reg_sale);
+    if(flav_sale!=0){
+    System.out.println("KK Flavoured Tea: "+flav_sale);
+    }
+  }
+  
+  public void productDetail() {
+    super.productDetail();
+    System.out.println("Weight: " + weight + ", Tea Bags: " + teabags);
+  }
+}
+
+public class KKFlavouredTea extends KKTea {
+  
+  public KKFlavouredTea(String flavor, int price, int teabags) {
+    super(price, teabags);
+    this.name = "KK " + flavor + " Tea";
+  }
+  
+  public static void updateSoldStatusFlavoured(KKFlavouredTea tea) {
+    if (!tea.status) {
+      tea.status = true;
+      flav_sale++;
+      total_sale++;
+    }
+  }
+  
+  public static void totalFlavouredSales() {
+    System.out.println("KK Flavoured Tea: " + flav_sale);
+  }
+  
+  public void productDetail() {
+    super.productDetail();
+  }
+  public int getKKslae(){
+    return flav_sale;
+  }
+}
+
+
