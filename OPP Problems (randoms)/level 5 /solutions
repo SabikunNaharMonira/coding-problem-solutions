@@ -1,0 +1,302 @@
+//task 1
+public class BrowserHistory{
+  
+  public int arr_count ;  
+  public int count; 
+  public int limitVisit;
+  public String web [] ;
+  
+  public BrowserHistory(int limitVisit){
+    this.limitVisit = limitVisit;
+    this.web = new String [limitVisit];
+  }
+  
+  
+  public void showHistory(){
+    if(arr_count==0){
+      System.out.println("No web pages visited yet.");
+    }
+    else{
+      System.out.println("Browser History:");
+      for(int i = 0 ; i< arr_count ; i++){
+        System.out.println(web[i]);
+      }
+    }
+  }
+  
+  public void currentWeb(){
+    if(arr_count==0){
+      System.out.println("You have not visited any website yet!");
+    }
+    else{
+      System.out.println("Current web page: "+web[arr_count-1]);
+    }
+  }
+  
+  public void visitWeb(String toweb){
+    if(arr_count >= limitVisit){
+      System.out.println("History is full. Cannot visit "+toweb+" web page.");
+    }
+    else{
+      web[arr_count++]=toweb;
+      count++;
+      System.out.println("Visited: " + toweb);
+    }
+  }
+  
+  public void back(){
+    if(arr_count>0){
+    arr_count= arr_count-1;
+    count--;
+    }
+  }
+}
+  
+  
+
+
+
+// task 2
+public class CustomerService{
+  public String [] customer;
+  public int front;
+  public int arr_count;
+  public int limit;
+  public int left;
+  
+  
+  public CustomerService(int n){
+    this.customer= new String [n];
+    this.limit = n;
+  }
+  
+  public void addCustomer(String name){
+    if(left==limit){
+      System.out.println("Queue is full. Cannot add "+name);
+    }
+    else{
+      customer[arr_count]=name;
+      arr_count= (arr_count+1)%limit;
+      left++;
+      System.out.println("Added: "+name);
+    }
+  }
+  
+  public void serveCustomer(){
+    if (left == 0) {
+      System.out.println("No customers to serve");
+    } 
+    else{
+      System.out.println("Serving " + customer[front]);
+      front = (front + 1) % limit;
+      left--;
+    }
+  }
+}
+
+
+
+
+//task 3
+public class Circle extends Shape {
+  public double radius;
+
+  public void area() {
+    double area = Math.PI * radius * radius;
+    System.out.printf("Area of "+color+" "+name+": %.2f\n", area);
+  }
+}
+
+
+
+
+//task4
+public class Dog extends Animal {
+  public String name;
+  
+  public Dog() {
+    System.out.println("The dog says hello!");
+  }
+
+  public String getName() {
+    return name;
+  }
+  
+  public void updateSound(String A) {
+    this.sound = A;
+  }
+}
+
+
+
+
+//task 5
+public class Cricket_Tournament extends Tournament{
+    public int team;
+  public String type=" No type";
+  
+  public Cricket_Tournament(){
+  }
+  
+  public Cricket_Tournament(String a , int team , String type ){
+    super(a);
+    this.team = team;
+    this.type=type;
+  }
+  
+  
+  public String detail(){
+    String a = "Cricket Tournament Name: "+getName()+
+      "\nNumber of Teams: "+team+" \nType: "+ type;
+    return a;
+  }
+ }
+public class Tennis_Tournament extends Tournament{
+    public int no_player;
+  
+  public Tennis_Tournament(String a , int no_player){
+    super(a);
+    this.no_player = no_player;
+  }
+  
+  
+  public String detail(){
+    String a = "Tennis Tournament Name: "+getName()+
+      "\nNumber of Players: "+no_player;
+    return a;
+  }
+  
+}
+
+
+
+
+
+
+//task 6
+class CD extends Product {
+  public String band;
+  public int duration;  
+  public String genre;
+  
+  public CD(int id, String title, int price, String band, int duration, String genre) {
+    super(id, title, price);
+    this.band = band;
+    this.duration = duration;
+    this.genre = genre;
+  }
+  
+  public String printDetail() {
+    String a = getIdTitlePrice() + " Band: " + band + " Duration: " + duration + " minutes Genre: " + genre;
+    return a; 
+  }
+}
+class Book extends Product {
+  public  String isbn;
+  public String publisher;
+  
+  public Book(int id, String title, int price, String isbn, String publisher) {
+    super(id, title, price); 
+    this.isbn = isbn;
+    this.publisher = publisher;
+  }
+
+  public String printDetail() {
+    String a = getIdTitlePrice() + " ISBN: " + isbn + " Publisher: " + publisher;
+    return a;
+  }
+}
+
+
+
+//task 7
+public class CSEStudent extends Student {
+  public static int total_Students = 0;
+  public static String[] lab_Courses = {"CSE110", "CSE111", "CSE220", "CSE221"};
+  
+  public CSEStudent(String n, int i) {
+    super(n, i);
+    total_Students++;  
+  }
+  public static void details() {
+    System.out.println("Total CSE Students: " + total_Students);
+    System.out.println("Available Lab Based Courses: ");
+    for (int i= 0 ; i<lab_Courses.length;  i++){
+      System.out.print(lab_Courses[i] + " ");
+    }
+    System.out.println();
+  }
+  
+  public void addLabBasedCourse(String course) {
+    boolean flag = false;
+    for (int i= 0 ; i<lab_Courses.length ; i++) {
+      if (lab_Courses[i].equals(course)) {
+        flag = true;
+        break;
+      }
+    } 
+    if(!flag) {
+      System.out.println("It is not a lab based course!");
+    }
+    else{
+      courses += " "+course+" ";
+    }
+  }
+}
+
+
+
+//task 8
+public class Player extends SportsPerson{
+  public int total_goal;
+  public int total_match;
+  public double goal_ratio;
+  public int total_player;
+  
+  public Player( String player_name, String team_name , String role, int total_goal, int total_player){
+    super(player_name, team_name, role);
+    this.total_goal= total_goal;
+    this.total_player = total_player;
+    total_match=total_player;
+  }
+  
+  
+  
+  public void calculateRatio(){
+    
+   this.goal_ratio = total_goal / (double)total_player;
+   earningPerMatch= (total_goal * 1000) + (total_match * 10);
+    
+  }
+  
+  
+  public void printDetails()  {
+    System.out.println(super.getNameTeam());
+    System.out.println("Team Role: " + role);
+    System.out.println("Total Goal: " + total_goal + ", Total Played: " + total_player);
+    System.out.printf("Goal Ratio: %.2f\n",goal_ratio);
+    System.out.println("Match Earning: " + (int)earningPerMatch + "K");
+  }
+}
+public class Manager extends SportsPerson{
+  public int match_win;
+  
+  public Manager(String team_name, String name, String role, int match_win) {
+    super(team_name, name, role);
+    this.match_win = match_win;
+  }
+  
+  public void calculateEarnings() {
+    this.earningPerMatch = match_win * 1000;
+  }
+  public void printDetails() {
+    System.out.println(super.getNameTeam());
+    System.out.println("Team Role: " + role);
+    System.out.println("Total Win: " + match_win);
+    calculateEarnings();
+    System.out.println("Match Earning: " + (int)earningPerMatch + "K");
+  }
+}
+
+
+
