@@ -1,0 +1,17 @@
+import java.io.IOException;
+import java.util.Scanner;
+public class beecrowd1020 {
+ 
+    public static void main(String[] args) throws IOException {
+        Scanner sc= new Scanner(System.in);
+        int n= sc.nextInt();
+        int year=n/365;
+        System.out.println(year+" ano(s)");
+        n=n-(year*365);
+        int month=n/30;
+        System.out.println(month+" mes(es)");
+        n=n-(month*30);
+        System.out.println(n+" dia(s)");
+    }
+ 
+}
