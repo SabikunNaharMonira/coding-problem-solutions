@@ -1,0 +1,256 @@
+1. Write the Java code of a program to find the largest among three different numbers entered by the user. 
+
+Sample Input
+Output
+100
+23
+-4
+largest number: 100
+5
+17
+-5
+largest number: 17
+
+2. Write a Java program that takes a student's numerical score as input as an integer and prints their corresponding letter grade according to the following grading system: 
+
+Scores
+90-100
+85-89
+70-84
+57-69
+50-56
+<50
+Grades
+
+Sample Input
+A
+A-
+B
+C
+D
+F
+
+Output
+9
+Your grade is F
+82
+Your grade is B
+
+3. Write a calculator program in Java that takes two integers and an operator (+, -, *, /) as input and performs the corresponding calculation.
+Please use the equals( ) method for string comparison.
+
+4. Write a Java code of a program that takes an integer number as user input and then determines if that number is divisible by both 5 and 7; otherwise display “No”. For example, numbers like 35, 70, 105, 140, 175, 210, 245, 280 etc. can be divisible by both 5 and 7. 
+
+Sample Input
+Output
+15
+Invalid: Divisible by 5 Only
+28
+Invalid: Divisible by 7 Only
+105
+Divisible by Both
+36
+No
+
+5. Write a Java program that will take a year as input and print whether that year is a leap year or not.     	
+		
+A year may be a leap year if it is evenly divisible by 4.
+Years that are divisible by 100 (century years such as 1900 or 2100) cannot be leap years unless they are also divisible by 400. 
+
+Sample Input
+2020
+2001
+1900
+Output
+2020 is a leap year
+2001 is not a leap year
+1900 is not a leap year
+
+6. Write a program which asks the user to enter an integer. Then you have to check the input and based on that you have to print the following outputs. 
+
+ If the input is negative, then print “Number is negative”
+ If the input is zero, then print “Number is zero”
+ If the input is positive and even, then print “Number is positive and even”
+And if the input is positive and odd, then print “Number is positive and odd”
+Sample Input
+5
+-2
+0
+Output
+Number is positive and odd
+Number is negative
+Number is zero
+
+7. Let’s consider the following piecewise function:
+f(x)={ 2x, x<0 ; x+1, 0<=x<2 ; x^2-1, 2<=x<5 ; 3x^2+2 , x>=5}
+Design a Java code of a program that takes the value of x as user input and then displays the output based on the given piecewise function.
+
+Sample Input
+-3
+1
+4
+10
+Output
+output: -6
+output: 2
+output: 15
+output: 302
+
+8. Write a Java Program, that takes in a student ID as integer, and prints out the year and the session the student enrolled in.
+Hints:
+The first two digits denote the year the student got enrolled
+The 3rd digit denotes the session Student joined(Spring→1,Summer→3,Fall→2) 
+
+
+Sample Input
+Output
+16101307
+Student Joined in Spring 16
+19301307
+Student Joined in Summer 19
+20201307
+Student Joined in Fall 20
+
+9. Write the Java code of a program that calculates the tax and prints it as follows:
+a)  No tax if you get paid less than 10,000
+b) 5% tax if you get paid between 10,000 and 20,000 (both inclusive)
+c) 10% tax if you get paid more than 20,000
+d) NO TAX IF YOU ARE LESS THAN 18 YEARS OLD.
+Hint: Take payment and age as user as inputs; then calculate tax and print it. 
+Sample Input
+Output
+9000
+23
+Your tax amounts in 0 Tk
+15000
+17
+Your tax amounts in 0 Tk
+15000
+18
+Your tax amounts in 750 Tk
+30000
+25
+Your tax amounts in 3000 Tk
+
+10. Write a Java program that takes 3 float numbers as input from the user and prints the maximum and minimum number from the inputs.
+
+Sample Input
+Output
+18.83
+-4.02
+83.12
+Maximum number is 83.12
+Minimum number is -4.02
+
+
+26.45
+0.02
+13.56
+Maximum number is 26.45
+Minimum number is 0.02
+
+11. 
+A triangle has 3 sides. Write a program which asks the users for input. Based on the input, your program should output whether it is an Equilateral, Isosceles or Scalene. 
+
+Equilateral triangle has three sides with equal length 
+Isosceles triangle has 
+two sides with equal length and another side is different
+Scalene triangle has different lengths in each side
+
+Sample Input
+Output
+5
+2
+4
+This is a Scalene triangle
+5
+5
+3
+This is a Isosceles triangle
+3
+3
+3
+This is a Equilateral triangle
+
+
+
+12. Suppose you are hired by Swapno. Now, your task is to create a Java program that will help the cashier calculate the change to be returned.
+The program takes two inputs. First input is an integer number which is the amount of money to be paid in taka and the second integer is the amount of money the customer gave to the cashier. Your program should print the following:
+
+If the customer gave more money than the actual amount, print change the cashier should return in notes and coins.
+If the customer gave less money than the amount to be paid, then print the amount the customer needs to pay. 
+Consider the following denomination for notes and coins in taka:
+Notes: 100, 50, 20, 10. 
+Coins: 5, 2, 1.
+Sample Input                                          
+Enter the amount the customer need to pay(Taka)
+35
+Enter the amount, customer gave(Taka)
+53
+
+Enter the amount the customer need to pay(Taka)
+60
+Enter the amount, customer gave(Taka)
+500
+
+Output
+The returned amount is 18 taka.
+100 taka note: 0
+50 taka note: 0
+20 taka note: 0
+10 taka note: 1
+5 taka coin: 1
+2 taka coin: 1
+1 taka coin: 1
+
+The returned amount is 440 taka.
+100 taka note: 4
+50 taka note: 0
+20 taka note: 2
+10 taka note: 0
+5 taka coin: 0
+2 taka coin: 0
+1 taka coin: 0
+
+Write a Java program that reads three numbers and prints "All numbers are equal" if all three numbers are equal, "All numbers are different" if all three numbers are different and "Neither all are equal or different" otherwise.
+
+User Input:
+Input the 1st number: 2345
+Input the 2nd number: 2452
+Input the 3rd number: 4532
+
+Input the 1st number: 230
+Input the 2nd number: 230
+Input the 3rd number: 112
+
+Output:
+All numbers are different
+Neither all are equal or different
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
