@@ -1,0 +1,54 @@
+public class Cart{
+  public int cNum=0;
+  public double [] prr=new double [3];
+  public String [] item= new String [3];
+  public int count_prr=0;
+  public int count_item=0;
+  public double dis=0.0;
+  public void create_cart(int x){
+    this.cNum=x;
+  }
+  public void addItem(String s, double price){
+    if(count_prr<prr.length){
+      this.prr[count_prr++]=price;
+      this.item[count_item++]=s;
+      System.out.println(s+" added to cart "+cNum);
+      System.out.println("You have "+count_item+" item(s) in your cart now.");
+      
+    }
+    else{
+      System.out.println("You already have 3 items on your cart");
+    }
+  }
+  public void addItem(double price, String s){
+    if(count_prr<prr.length){
+      this.prr[count_prr++]=price;
+      this.item[count_item++]=s;
+      System.out.println(s+" added to cart "+cNum);
+      System.out.println("You have "+count_item+" item(s) in your cart now.");
+      
+    }
+    else{
+      System.out.println("You already have 3 items on your cart");
+    }
+  }
+  public void cartDetails(){
+    double total=0.0;
+    System.out.println("Your cart(c"+cNum+") :" );
+    for(int i =0 ; i<count_item ; i++){
+      total+=this.prr[i];
+      System.out.println(this.item[i]+"-"+this.prr[i]);
+      
+    }
+    System.out.println("Discount Applied: "+dis+"%");
+    if(this.dis==0){
+    System.out.println("Total price: "+total);
+    }
+    else{
+      System.out.println("Total price: "+(total-(total*(this.dis/100.0))));
+    }
+  }
+  public void giveDiscount(int a){
+    this.dis=a;
+  }
+}

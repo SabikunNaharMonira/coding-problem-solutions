@@ -1,0 +1,6 @@
+public class BankAccount{
+  public int acc;
+  public String type;
+  public void printDetails(){
+    System.out.println(this.acc+"/n"+this.type);
+    }
