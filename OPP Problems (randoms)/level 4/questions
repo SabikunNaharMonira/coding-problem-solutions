@@ -1,0 +1,482 @@
+
+
+Task 1
+
+Write the  “Product” class to show the following output
+Note: Make sure to use proper Encapsulation concepts for the setter & getter methods. All the attributes should have Private access.
+
+Driver Code
+Output 
+public class ProductTester{
+  public static void main(String[] args) {
+    System.out.println("< —--—----1—-------->");
+    Product product1 = new Product();
+    product1.displayInfo();
+    System.out.println("< —--—----2—-------->");
+    Product product2 = new Product("Laptop", 1200.00);
+    product2.setQuantity(10);
+    product2.displayInfo(true); 
+    System.out.println("< —--—----3—-------->");
+    System.out.println("Retrieved Price: $" + product2.getPrice());
+    System.out.println("Retrieved Quantity: " + product2.getQuantity());
+   }
+}
+< —--—----1—-------->
+Product Name: Unknown
+Price: $0.0
+< —--—----2—-------->
+Product Name: Laptop
+Price: $1200.0
+Quantity: 10
+< —--—----3—-------->
+Retrieved Price: $1200.0
+Retrieved Quantity: 10
+
+
+
+
+ 
+Task 2
+
+Design the Passenger class in such a way that the following code provides the expected output.
+Passenger class has two static variables no_of_passenger and total_fare.
+Each passenger has to pay 20 TK/Distance and extra 10 TK/BaggageWeight. 
+Given Code
+Expected Output
+public class PassengerTester{ 
+  public static void main(String args[]){
+    System.out.println("Total Passenger: "+ Passenger.no_of_passenger);
+    System.out.println("Total Fare: "+ Passenger.total_fare + " TK");
+    System.out.println("==========1==========");
+    Passenger p1 = new Passenger("Lara", 5.6);
+    p1.passengerDetails();
+    System.out.println("==========2==========");
+    Passenger p2 = new Passenger("Kevin", 10.0);
+    p2.storeBaggageWeight(6.8);
+    p2.passengerDetails();
+    System.out.println("==========3==========");
+    Passenger p3 = new Passenger("Robin", 2.3);
+    p3.storeBaggageWeight(5.0);
+    p3.passengerDetails();
+    System.out.println("==========4==========");
+    System.out.println("Total Passenger: "+ Passenger.no_of_passenger);
+    System.out.println("Total Fare: "+ Passenger.total_fare + " TK");
+  }
+}
+Total Passenger: 0
+Total Fare: 0.0 TK
+==========1==========
+Name: Lara
+Fare: 112.0 TK
+==========2==========
+Name: Kevin
+Fare: 268.0 TK
+==========3==========
+Name: Robin
+Fare: 96.0 TK
+==========4==========
+Total Passenger: 3
+Total Fare: 476.0 TK
+
+
+
+Task 3
+
+Design a Book class in such a way that the following code provides the expected output. 
+The Book class has two static variables: total_books_sold and total_revenue.
+Each book has a base price of 150 TK. If the discountPercentage is applied, the book's price is reduced by that percentage. 
+The Book class should have a method to calculate the price after the discount 
+
+Given Code
+Expected Output
+
+public class BookTester {
+ public static void main(String[] args) {
+    System.out.println("Total Books Sold: " + Book.total_books_sold);
+    System.out.println("Total Revenue: "+Book.total_revenue + " TK");
+    System.out.println("==========1==========");
+
+    Book b1 = new Book("Java Programming", 10); // 10% discount
+    b1.bookDetails();
+
+    System.out.println("==========2==========");
+
+    Book b2 = new Book("Python Programming", 15); // 15% discount
+    b2.bookDetails();
+
+    System.out.println("==========3==========");
+    
+    Book b3 = new Book("Data Structures", 5); // 5% discount
+    b3.bookDetails();
+
+    System.out.println("==========4==========");
+    System.out.println("Total Books Sold: " + Book.total_books_sold);
+    System.out.println("Total Revenue: "+Book.total_revenue + " TK");
+    }
+}
+
+
+
+Total Books Sold: 0
+Total Revenue: 0.0 TK
+==========1==========
+Title: Java Programming
+Price after Discount: 135.0 TK
+==========2==========
+Title: Python Programming
+Price after Discount: 127.5 TK
+==========3==========
+Title: Data Structures
+Price after Discount: 142.5 TK
+==========4==========
+Total Books Sold: 3
+Total Revenue: 405.0 TK
+
+
+
+
+
+
+
+
+
+
+
+Task 4
+
+Write a class called Circle with the required constructor and methods to get the following output.
+Subtasks:
+1. Create a class called Circle.
+2. Create the required constructor. Use Encapsulation to protect the variables. [Hint: Assign the radius variable in private]
+3. Create a getRadius() and setRadius() method to access variables.  
+4. Create a method called area to calculate the area of circles.
+
+Given Code
+Expected Output
+public class CircleTester {
+  public static void main(String[] args) {
+    System.out.println("Total Circle: "+ Circle.count);
+    Circle c1 = new Circle(4);
+    System.out.println("1---------------");
+    System.out.println("Total Circle: "+ Circle.count);
+    System.out.println("First circle radius: " + c1.getRadius());
+    System.out.println("First circle area: " + c1.area());
+    System.out.println("2---------------");
+    Circle c2 = new Circle(5);
+    System.out.println("Total Circle: "+ Circle.count);
+    System.out.println("Second circle radius: " + c2.getRadius());
+    System.out.println("Second circle area: " + c2.area());
+    System.out.println("3---------------"); 
+  }
+}
+
+
+Total Circle: 0
+1---------------
+Total Circle: 1
+First circle radius: 4.0
+First circle area: 50.26548245743669
+2---------------
+Total Circle: 2
+Second circle radius: 5.0
+Second circle area: 78.53981633974483
+3---------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Task 5
+
+Suppose you have opened a new library, from where your friends can borrow books. Initially you have bought 3 books (Pather Panchali, Durgesh Nandini & Anandmath) each of 3 copies only. Design the Borrower class in such a way that the following code provides the expected output.
+You are given the arrays book_count and book_name to keep track of the number of books available. For simplicity, assume that there will be no other books in the library.
+You must reuse the remainingBooks() method when needed.
+
+
+Given Code
+Expected Output
+public class Tester{
+  public static void main(String args[]){
+    Borrower.bookStatus();
+    System.out.println("*********1*********");
+    Borrower b1 = new Borrower("Nabila");
+    b1.borrowBook("Pather Panchali");
+    b1.borrowBook("Anandmath");
+    b1.borrowerDetails();
+    System.out.println("*********2*********");
+    Borrower b2 = new Borrower("Sadia");
+    b2.borrowBook("Anandmath");
+    b2.borrowBook("Durgesh Nandini");
+    b2.borrowBook("Pather Panchali");
+    b2.borrowerDetails();
+    System.out.println("*********3*********");
+  System.out.println(Borrower.remainingBooks("Anandmath")+" copies of Anandmath is remaining.");
+    System.out.println("*********4*********");
+    Borrower b3 = new Borrower("Anika");
+    b3.borrowBook("Anandmath");
+    Borrower.bookStatus();
+    System.out.println("*********5*********");
+    Borrower b4 = new Borrower("Oishi");
+    b4.borrowBook("Anandmath");
+    b4.borrowBook("Durgesh Nandini");
+    b4.borrowerDetails();
+  }
+}   
+
+public class Borrower{
+  public static int book_count[] = {3, 3, 3};
+  public static String book_name[] = {"Pather Panchali", "Durgesh Nandini", "Anandmath"};
+
+  // Your Code here
+}
+Available Books: 
+Pather Panchali: 3
+Durgesh Nandini: 3
+Anandmath: 3
+*********1*********
+Name: Nabila
+Books Borrowed: 
+Pather Panchali
+Anandmath
+*********2*********
+Name: Sadia
+Books Borrowed: 
+Anandmath
+Durgesh Nandini
+Pather Panchali
+*********3*********
+1 copies of Anandmath is remaining.
+*********4*********
+Available Books: 
+Pather Panchali: 1
+Durgesh Nandini: 2
+Anandmath: 0
+*********5*********
+This book is not available.
+Name: Oishi
+Books Borrowed: 
+Durgesh Nandini
+
+Task 6
+
+For this task, you need to design the Cargo class with appropriate static and non-static variables and methods to produce this given output for the given tester code.
+Note: .load() method marks an object as selected for transport, and .unload() method unmarked it. At a time, the transport capacity is 10.0 Tonnes. Each Cargo object is initialized with 2 attributes from the constructor - the contents and the weight. Carefully observe the outputs to identify the other attributes and design the class.
+
+Given Code
+Expected Output
+public class CargoTester {
+  public static void main(String[] args) {
+    System.out.println("Cargo Capacity: "+ Cargo.capacity());
+    System.out.println("1====================");
+    Cargo a = new Cargo("Industrial Machinery", 4.5);
+    a.details();
+    System.out.println("2====================");
+    a.load();
+    System.out.println("3====================");
+    Cargo b = new Cargo("Steel Ingot", 2.7);
+    b.details();
+    System.out.println("4====================");
+    System.out.println("Cargo Capacity: "+ Cargo.capacity());
+    System.out.println("5====================");
+    b.load();
+    System.out.println("Cargo Capacity: "+ Cargo.capacity());
+    System.out.println("6====================");
+    Cargo c = new Cargo("Tree Trunks", 3.6);
+    c.load();
+    System.out.println("7====================");
+    c.details();
+    b.details();
+    System.out.println("8====================");
+    Cargo d = new Cargo("Processed Goods", 1.8);
+    d.load();
+    System.out.println("Cargo Capacity: "+ Cargo.capacity());
+    System.out.println("9====================");
+    b.unload();
+    System.out.println("Cargo Capacity: "+ Cargo.capacity());
+    System.out.println("10====================");
+    c.load();
+    System.out.println("11====================");
+    b.details();
+    System.out.println("Cargo Capacity: "+ Cargo.capacity());
+  }
+}
+Cargo Capacity: 10.0
+1====================
+Cargo ID: 1, Contents: Industrial Machinery, Weight: 4.5, Loaded: false
+2====================
+Cargo 1 loaded for transport.
+3====================
+Cargo ID: 2, Contents: Steel Ingot, 
+Weight: 2.7, Loaded: false
+4====================
+Cargo Capacity: 5.5
+5====================
+Cargo 2 loaded for transport.
+Cargo Capacity: 2.8
+6====================
+Cannot load cargo, exceeds weight capacity.
+7====================
+Cargo ID: 3, Contents: Tree Trunks, 
+Weight: 3.6, Loaded: false
+Cargo ID: 2, Contents: Steel Ingot, 
+Weight: 2.7, Loaded: true
+8====================
+Cargo 4 loaded for transport.
+Cargo Capacity: 1.0
+9====================
+Cargo 2 unloaded.
+Cargo Capacity: 3.7
+10====================
+Cargo 3 loaded for transport.
+11====================
+Cargo ID: 2, Contents: Steel Ingot, 
+Weight: 2.7, Loaded: false
+Cargo Capacity: 0.09999999999999964
+
+
+
+
+
+
+Task 7
+
+Design a Student class in such a way that the following code provides the expected output.  
+Driver Code
+Output
+public class StudentTester {
+  public static void main(String[] args) {
+    Student.printDetails();
+    System.out.println("--------------------");
+    Student mikasa = new Student("Mikasa", 3.75);
+    mikasa.individualDetail();
+    System.out.println("--------------------");
+    Student.printDetails();
+    System.out.println("--------------------");
+    Student harry = new Student("Harry", 2.5, "Charms");
+    harry.individualDetail();
+    System.out.println("--------------------");
+    Student.printDetails();
+    System.out.println("--------------------");
+    Student levi = new Student("Levi", 3.33);
+    levi.individualDetail();
+    System.out.println("--------------------");
+    Student.printDetails();
+  }
+}
+Total Student(s): 0
+CSE Student(s): 0
+Other Department Student(s): 0
+--------------------
+ID: 1
+Name: Mikasa
+CGPA: 3.75
+Department: CSE
+--------------------
+Total Student(s): 1
+CSE Student(s): 1
+Other Department Student(s): 0
+--------------------
+ID: 2
+Name: Harry
+CGPA: 2.5
+Department: Charms
+--------------------
+Total Student(s): 2
+CSE Student(s): 1
+Other Department Student(s): 1
+--------------------
+ID: 3
+Name: Levi
+CGPA: 3.33
+Department: CSE
+--------------------
+Total Student(s): 3
+CSE Student(s): 2
+Other Department Student(s): 1
+
+
+
+
+Task 8
+
+Design the Player class with the necessary property to produce the output from the given driver code. Hint: The total number of players is maximum 11
+
+Driver Code
+Output
+public class PlayerTester{
+  public static void main(String[] args) {
+    System.out.println("Total number of players: " + Player.total);
+    System.out.println("1------------------");
+    Player p1 = new Player("Neymar", "Brazil",5);
+    System.out.println(p1.player_detail());
+    System.out.println("===================");
+    Player.info();
+    System.out.println("2------------------");
+    Player p2 = new Player("Ronaldo", "Portugal", 7);
+    System.out.println(p2.player_detail());
+    System.out.println("===================");
+    Player.info();
+    System.out.println("3------------------");
+    Player p3 = new Player("Messi", "Argentina", 6);
+    System.out.println(p3.player_detail());
+    System.out.println("===================");
+    Player.info();
+    System.out.println("4------------------");
+    Player p4 = new Player("Mbappe", "France", 10);
+    System.out.println(p4.player_detail());
+    System.out.println("===================");
+    Player.info();
+  }
+}
+
+
+
+
+Total number of players: 0
+1---------------------------
+Player Name: Neymar
+Jersey Number: 5
+Country: Brazil
+========================
+Total number of players: 1
+Players enlisted so far: Neymar
+2---------------------------
+Player Name: Ronaldo
+Jersey Number: 7
+Country: Portugal
+========================
+Total number of players: 2
+Players enlisted so far: Neymar, Ronaldo
+3---------------------------
+Player Name: Messi
+Jersey Number: 6
+Country: Argentina
+========================
+Total number of players: 3
+Players enlisted so far: Neymar, Ronaldo, Messi
+4---------------------------
+Player Name: Mbappe
+Jersey Number: 10
+Country: France
+========================
+Total number of players: 4
+Players enlisted so far: Neymar, Ronaldo, Messi, Mbappe
+
+
+
+
+
+
