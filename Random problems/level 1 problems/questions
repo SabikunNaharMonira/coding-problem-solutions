@@ -1,0 +1,76 @@
+1. Find out which of the following are legal identifiers in Java, and which are not. 
+Also, explain why the invalid ones are invalid. You can try to define each of these (items a to k below) as a variable in the Dr java interaction pane and find out.
+The first one is done for you as an Example. If you want to define hungry, you have to try
+int hungry;
+
+a) hungry	 b) 2AB	c) 312.2	d) MOBILE	 e) “Ans” 	f) $30
+g) Yes/No	 h) student-id	     i) A+3	 j) ‘X’		k) return
+
+2. Write the Java code for the following:
+  2.1 Declare an integer variable. Initialize it with some value of your choice and print it to check the value has been stored properly.
+  2.2 Declare and initialize another integer variable. Add this to the first one and print out the result. Verify that the addition has been done correctly.
+  2.3 Now print the product and division of the two integer numbers.
+  2.4 Repeat exercises 2.1, 2.2, and 2.3 for variables of data type double. Verify your answers.
+  2.5 Repeat exercises 2.1, 2.2, and 2.3 for one double data type and one integer datatype. Verify your answers.
+  2.6 Repeat exercises 2.1 and 2.2 for variables of data type String. How does the addition operator work for Strings? What if the first variable is an integer and the second is a String and vice versa?
+
+3. Write Java code that calculates and prints the circumference and area of a circle with a radius of 4 units.
+
+4. Write a Java code where given an integer we need to print the last 2 digits of that number. 
+
+5. Write a Java program that given a number in inches (you have to declare and initialize it yourself) converts it to meters. Note: One inch is 0.0254 meters.
+Test Data:
+Given a value for inch: 1000
+Expected Output:
+1000 inch is 25.4 meters
+
+6. Write a Java program declaring two integer variables and initializing them. Your task is to swap the values of these two variables. You must complete it using two different approaches.
+By Creating a third variable.
+Without creating any other variables.
+
+7. Write a Java program to convert minutes into years and days. For simplicity, assume each year consists of 365 days.
+Test Data:
+Given the number of minutes: 3456789
+Expected Output:
+3456789 minutes is approximately 6 years and 210 days
+
+8. Suppose, you have three integer variables: a, b, c. Your first task is to assign the values 2, 5, 8 in these three variables. Next, you need to calculate and display the value of variable d using the following formula:
+  d= (2b*c-a/3)+7
+9. Write a Java Code to display the multiplication table for a given positive integer 'n'. The table should include the products of 'n' with each of the numbers from 1 to 10. For example, if n = 5, your code should output:
+5 x 1 = 5
+5 x 2 = 10
+5 x 3 = 15
+...
+5 x 10 = 50
+[You are not allowed to use loops to solve this problem.]
+
+10. Write the Java code of a program that finds the sum of the first 100 positive numbers.
+[Do NOT use loops, use the mathematical formula for calculating sum of arithmetic series given below].
+Note:
+
+ 11. Design a Java program to calculate Sin and Cos values from a right-angled triangle. 
+
+Assume the values of a and b are 4.5 and 9.5 respectively. Finally, print the Sin and Cos values of angle A and angle B (SinA, CosA, SinB, CosB). The formulas to calculate these values are given below.
+
+Hint: You need the values for all 3 sides to calculate both sin and cos. You are given only a and b. How would you get the value of c? You’ll need the help of Math.sqrt().
+
+
+ 12. Write a Java program that displays the 2 rightmost digits of your student ID in reverse order. For example, if your student id is 23221454, you need to print 4, and then 5.
+[Hint: Use the logic you used in one of the tasks in lab 1]
+Output:
+4
+5
+
+ 13. You have been traveling on a bike for 5 hours, 56 minutes, and 23 seconds. Assuming the distance covered is (Last 4 digits of your student ID) meter. Write a Java code to display the velocity of your bike in kilometers per hour and miles per hour. 
+[Hint: 1 mile = 1609 meters]
+
+Test Data:
+Input distance in meters: 2500 // Assuming the last 4 digits are 2500
+
+Expected Output:
+Your velocity in km/h is 0.4208951
+Your velocity in miles/h is 0.2615880
+
+ 14. Assume a Hexagon where each of the sides are of the same length. From the visualization, we can see the values of a and b are given. Your task is to write a Java code to find the area and the circumference of the Hexagon. 
+
+ 
