@@ -1,0 +1,149 @@
+
+Methods
+
+1. [A,B,C,D should be written in a single java file]
+
+A. Write a method called evenChecker that takes an integer number as its argument and prints whether the number is even or odd inside the method.
+
+Sample Method Call
+Sample Output
+evenChecker(10);
+Even!!
+evenChecker(17);
+Odd!!
+
+
+B. Write a method called isEven that takes an integer number as an argument and returns boolean true if the number is even otherwise returns boolean false.
+
+Sample Method Call
+Sample Output
+boolean result = isEven(10);
+System.out.println( result );
+true
+boolean result = isEven(17);
+System.out.println( result );
+false
+
+
+C. Write a method called isPos that takes an integer number as an argument and returns boolean true if the number is positive otherwise returns boolean false.
+
+Sample Method Call
+Sample Output
+boolean result = isPos(-5);
+System.out.println( result );
+false
+boolean result = isPos(12);
+System.out.println( result );
+true
+
+
+D. Write a method called sequence() that takes an integer in its parameter called n. Now, if n is positive then it prints all the even numbers from 0 to n, otherwise if n is negative it prints all the odd numbers from n to -1.
+
+Note: You must call the methods from CW-1B and CW-1C, otherwise this task would be considered invalid.
+
+Sample Method Call
+Sample Output
+Explanation
+sequence(10);
+0 2 4 6 8 10
+Here, 10 is positive so 0,2,4,6,8,10 were printed.
+sequence(-7);
+-7 -5 -3 -1
+Here, -7 is negative so -7,-5,-3,-1 were printed.
+sequence(7);
+0 2 4 6
+Here, 7 is positive so 0,2,4,6 were printed
+sequence(-8);
+-7 -5 -3 -1
+Here, -8 is negative so -7,-5,-3,-1 were printed.
+
+
+
+2. [A,B,C should be written in a single java file]
+
+A. Write a method called circleArea that takes an integer radius in its parameter and returns the area of the circle.
+Note: area of a circle is r2
+
+Sample Method Call
+Sample Output
+   double area = circleArea(5);
+   System.out.println(area);
+78.5398
+
+
+
+
+
+
+B. Write a method called sphereVolume that takes an integer radius in its parameter and returns the volume of the sphere.
+Note: volume of a sphere is 43r3
+
+Sample Method Call
+Sample Output
+double volume = sphereVolume(5);
+System.out.println(volume);
+523.5987
+
+
+
+C. Write a method called findSpace that takes two values in its parameters one is an integer diameter and another one is a String. Using the given diameter, this method should calculate the Area of a circle or the Volume of a sphere depending on the value of the second parameter. Finally, it should print the result inside the method.
+
+Note: You must call the method written in task CW-2A & CW-2B, otherwise this task would be considered invalid.
+
+Sample Method Call
+Sample Output
+findSpace(10,"circle");  
+78.5398
+findSpace(5,"sphere"); 
+33.5103
+findSpace(10,"square");
+“Wrong Parameter”
+
+
+
+3. Write a method called isPrime which takes an integer in its parameter to check whether a number is prime or not. If the number is prime then the method returns boolean true otherwise it returns boolean false.
+
+Sample Input
+Sample Output
+boolean check = isPrime(7);
+System.out.println(check);
+true
+boolean check = isPrime(15);
+System.out.println(check);
+false
+
+
+
+4. Write a method called isPerfect which takes an integer in its parameter to check whether a number is perfect or not. If the number is perfect then the method returns boolean true otherwise it returns boolean false.
+
+Sample Input
+Sample Output
+boolean check = isPerfect(6);
+System.out.println(check);
+true
+boolean check = isPerfect(33);
+System.out.println(check);
+false
+
+
+
+5. Write a method called calcTax that takes 2 arguments which are your age then your salary. The method must calculate and return the tax as per the following conditions:
+No tax if you are less than 18 years old.
+No tax if you get paid less than 10,000
+7% tax if you get paid between 10K and 20K
+14% tax if you get paid more than 20K
+
+Sample Method Call
+Output
+Explanation
+double t = calcTax(16,20000);
+System.out.println(t);
+0.0
+Here, the age is less than 18 so 0 tax.
+
+double t = calcTax(20,18000);
+System.out.println(t);
+1260.0
+Here, the age is greater than 18 and income is between 10K-20K so tax is 7% of 18000 = 1260.
+
+
