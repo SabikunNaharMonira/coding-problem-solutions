@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class task1{
+  public static void main(String args[]){
+    Scanner sc=new Scanner(System.in);
+    int n=sc.nextInt();
+    int max=Integer.MIN_VALUE;
+    int min=Integer.MAX_VALUE;
+    int sum=0;
+    for (int i=1 ; i<=n ; i++){
+      int input=sc.nextInt();
+      if(input>0 && input%2==0){
+        if(input>max){
+          max=input;
+        }
+        if(input<min){
+          min=input
+        }
+        sum= sum+ input;
+      }
+      int avrg=sum/n;
+    }
+    System.out.println("MAX: "+max);
+      System.out.println("Min: "+min);
+      System.out.println("Average: "+avrg);
+  }
+}
+        
+     
+      
+    
